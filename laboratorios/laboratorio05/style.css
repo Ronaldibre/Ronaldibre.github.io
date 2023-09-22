@@ -1,0 +1,17 @@
+.cinza{
+    background-color: gray;
+    height: 100px;
+}
+
+ul{
+    list-style-type: none;
+}
+
+.centro{
+    display: inline-block;
+}
+
+.mensagem{
+    width: 300px;
+    height: 200px;
+}

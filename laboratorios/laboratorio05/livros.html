@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livros</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Fundamentos da Web</h1>
+    <p>Exercícios</p>
+
+    <section class="cinza">
+        <a href="index.html">Retomar</a>
+    </section>
+
+    <h1>Cadastro de livros</h1>
+
+    <p>Nesta atividade, você deve desenvolver uma tela de cadastro de livros para uma biblioteca.</p>
+    <p>Seus dados devem ser enviados numa requisição HTTP com método POST para a URL http://httpbin.org/post</p>
+
+    <form>
+        <fieldset class="centro">
+            <legend>Cadastro de livros</legend>
+            <label for="titulo"><strong>Título</strong></label>
+            <input type="text" name="titulo" placeholder="Digite o login">
+            <br><br/>
+            <label for="descricao"><strong>Descrição</strong></label>
+            <input type="text" name="descricao" placeholder="Digite uma descrição para o livro">
+            <br><br/>
+            <label for="autores"><strong>Autores</strong></label>
+            <input type="text" name="descricao" placeholder="Digite os autores da obra">
+            <br><br/>
+            <select name=”Estilo”>
+                <option value=“academico”>Acadêmico</option>
+                <option value=“profissional”>Profissional</option>
+                <option value=“empresarial”>Empresarial</option>
+            </select>
+            <br><br/>
+            <button>Adicionar</button>
+            <button>Limpar</button>
+        </fieldset>
+    </form>
+
+
+    
+</body>
+</html>
