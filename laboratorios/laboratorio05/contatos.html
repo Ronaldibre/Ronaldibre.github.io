@@ -7,48 +7,53 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Fundamentos da Web</h1>
-    <p>Exercícios</p>
+    <header>
+        <h1>Fundamentos da Web</h1>
+        <p class="textoCinza">Exercícios</p>
+    </header>
 
     <section class="cinza">
-        <a href="index.html">Retomar</a>
+        <a href="index.html" class="retomar">Retomar</a>
     </section>
 
-    <h1>Contatos</h1>
-
-    <p>Nesta atividade você, você deve desenvolver uma tela de contatos de um site. Considere a natureza dos campos. Seus dados devem ser enviados numa requisição HTTP com método POST para a URL http://httpbin.org/post</p>
-
-    <form action="http://httpbin.org/post" method="POST">
-        <fieldset class="centro">
-            <legend>Entre em contato conosco!</legend>
-            <label for="nome"><strong>Nome</strong></label>
-            <input type="text" name="nome" placeholder="Digite seu nome">
-            <br><br/>
-            <label for="assunto"><strong>Assunto</strong></label>
-            <input type="text" name="assunto" placeholder="Digite o assunto">
-            <br><br/>
-            <label for="data"><strong>Data da ocorrência</strong></label>
-            <input type="date" name="dataDaOcorrencia">
-            <br><br/>
-            <label for="imaegm"><strong>Foto da ocorrência</strong></label>
-            <input type="file" name="FotoDaOcorrencia">
-            <br><br/>
-            <label for="telefone"><strong>Telefone</strong></label>
-            <input type="tel" name="telefone" placeholder="Digite seu telefone">
-            <br><br/>
-            <label for="email"><strong>Email</strong></label>
-            <input type="email" name="email" placeholder="Digite seu email">
-            <br><br/>
-            <label for="mensagem"><strong>Mensagem</strong></label>
-            <input class="mensagem" type="text" name="mensagem" placeholder="Digite sua mensagem">
-            <br><br/>
-            <label for="Estilo"><strong>Estilo</strong></label>
-            <select name=”Estilo”>
-                <option value=“academico”>Acadêmico</option>
-                <option value=“profissional”>Profissional</option>
-                <option value=“empresarial”>Empresarial</option>
-            </select>
-        </fieldset>
-    </form>
+    <div>
+        <h1>Contatos</h1>
+        <p>Nesta atividade você, você deve desenvolver uma tela de contatos de um site. Considere a natureza dos campos. Seus dados devem ser enviados numa requisição HTTP com método POST para a URL http://httpbin.org/post</p>
+        <form action="http://httpbin.org/post" method="POST">
+            <fieldset class="centro">
+                <legend>Entre em contato conosco!</legend>
+                <label for="nome"><strong>Nome</strong></label>
+                <input type="text" name="nome" placeholder="Digite seu nome">
+                <br><br/>
+                <label for="assunto"><strong>Assunto</strong></label>
+                <input type="text" name="assunto" placeholder="Digite o assunto">
+                <br><br/>
+                <label for="data"><strong>Data da ocorrência</strong></label>
+                <input type="date" name="dataDaOcorrencia">
+                <br><br/>
+                <label for="imaegm"><strong>Foto da ocorrência</strong></label>
+                <input type="file" name="FotoDaOcorrencia">
+                <br><br/>
+                <label for="telefone"><strong>Telefone</strong></label>
+                <input type="tel" name="telefone" placeholder="Digite seu telefone">
+                <br><br/>
+                <label for="email"><strong>Email</strong></label>
+                <input type="email" name="email" placeholder="Digite seu email">
+                <br><br/>
+                <label for="mensagem"><strong>Mensagem</strong></label>
+                <input class="mensagem" type="text" name="mensagem" placeholder="Digite sua mensagem">
+                <br><br/>
+                <label for="Estilo"><strong>Estilo</strong></label>
+                <select name=”Estilo”>
+                    <option value=“academico”>Acadêmico</option>
+                    <option value=“profissional”>Profissional</option>
+                    <option value=“empresarial”>Empresarial</option>
+                </select>
+                <br><br/>
+                <input class="add" type="submit" name="adicionarContato" value="Adicionar">
+                <input class="clean" type="reset" name="limparContato" value="Limpar">
+            </fieldset>
+        </form>
+    </div>
 </body>
 </html>

@@ -7,29 +7,32 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Fundamentos da Web</h1>
-    <p>Exercícios</p>
+    <header>
+        <h1>Fundamentos da Web</h1>
+        <p class="textoCinza">Exercícios</p>
+    </header>
 
     <section class="cinza">
-        <a href="index.html">Retomar</a>
+        <a href="index.html" class="retomar">Retomar</a>
     </section>
 
-    <h1>Login</h1>
-
-    <p>Nesta atividade, você deve desenvolver uma tela de contatos com o site. Considere a natureza dos campos. Seus dados devem ser enviados numa requisição HTTP com o método POST para a URL http://httpbin.org/post</p>
-
-    <form>
-        <fieldset class="centro">
-            <legend>Entre em contato conosco!</legend>
-            <label for="login"><strong>Login</strong></label>
-            <input type="text" name="login" placeholder="Digite o login">
-            <br><br/>
-            <label for="senha"><strong>Senha</strong></label>
-            <input type="password" name="senha" placeholder="Digite a senha">
-            <br><br/>
-            <button>Login</button>
-        </fieldset>
-    </form>
+    <div>
+        <h1>Login</h1>
+        <p>Nesta atividade, você deve desenvolver uma tela de contatos com o site. Considere a natureza dos campos. Seus dados devem ser enviados numa requisição HTTP com o método POST para a URL http://httpbin.org/post</p>
+        <form action="http://httpbin.org/post" method="POST">
+            <fieldset class="centro">
+                <legend>Entre em contato conosco!</legend>
+                <label for="login"><strong>Login</strong></label>
+                <input type="text" name="login" placeholder="Digite o login">
+                <br><br/>
+                <label for="senha"><strong>Senha</strong></label>
+                <input type="password" name="senha" placeholder="Digite a senha">
+                <br><br/>
+                <input class="botao" type="submit" name="Login" value="Login">
+                <!-- <button type="submit">Login</button>-->
+            </fieldset>
+        </form>
+    </div>
 
 
 </body>

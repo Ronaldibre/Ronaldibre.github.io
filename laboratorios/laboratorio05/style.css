@@ -1,10 +1,30 @@
+header{
+    margin-left: 60px;
+}
+
+div{
+    margin-left: 60px;
+}
+
 .cinza{
     background-color: gray;
     height: 100px;
+    display: flex;
+    align-items: center;
+}
+
+.textoCinza{
+    color: gray;
+}
+
+.retomar{
+    margin-left: 60px;
 }
 
 ul{
+    padding: 0px;
     list-style-type: none;
+    margin-left: 60px;
 }
 
 .centro{
@@ -15,3 +35,42 @@ ul{
     width: 300px;
     height: 200px;
 }
+
+label{
+    margin-left: 200px;
+    margin-right: 10px;
+}
+
+input{
+    margin-right: 70px;
+}
+
+.botao{
+    margin-left: 294.5px;
+}
+
+.add{
+    margin-left: 360px;
+    margin-right: 9px;
+}
+
+.add , .botao , .clean{
+    padding: 15px;
+}
+
+label {
+    display: inline-block;
+    width: 150px;
+    text-align: right; 
+    margin-right: 10px; 
+}
+
+
+select {
+    width: 200px;
+}
+
+
+
+
+
