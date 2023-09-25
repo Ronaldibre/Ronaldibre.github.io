@@ -4,8 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <form action="http://httpbin.org/post" method="post">
+        <label for="nome">Nome</label>
+        <input required type="text" name="nome">
+        <label for="idade">Idade</label>
+        <input required type="number" min="18" max="99">
+        <fieldset>
+            <legend>Genero</legend>
+            <label>
+                <input type="radio" name="genero" value="masculino">
+                Masculino
+            </label>
+            <br>
+            <label>
+                <input type="radio" name="genero" value="feminino">
+                Feminino
+            </label>
+            <br>
+            <label>
+                <input type="radio" name="genero" value="outros">
+                Outros
+            </label>
+        </fieldset>
+        <label for="email">E-mail</label>
+        <input required type="email" name="email">
+        <label for="senha">Senha</label>
+        <input type="password" name="senha">
+        <select>
+            <option>Escolha um país</option>
+            <option value=“brasil”>Brasil</option>
+            <option value=“canada”>Canadá</option>
+            <option value="outros">Outros</option>
+        </select>
+        <label for="comentario">Comentários</label>
+        <textarea name="comentario" cols="30" rows="10"></textarea>
+        <input type="submit" name="enviar">
+    </form>
     
 </body>
 </html>

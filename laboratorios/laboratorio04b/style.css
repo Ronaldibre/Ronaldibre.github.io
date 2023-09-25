@@ -1,0 +1,39 @@
+form {
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #cecbcb;
+    border-radius: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"] {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 15px;
+}
+
+input[type="submit"] {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 3px;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+textarea {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 15px;
+}
+
+
+fieldset{
+    margin-bottom: 10px;
+}
