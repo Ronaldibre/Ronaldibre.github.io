@@ -1,0 +1,50 @@
+header{
+    margin-bottom: 40px;
+}
+
+
+main ul li h2{
+    width: 270px;
+    text-align: center;
+}
+
+main > ul {
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+main > ul > li > h2 > a{
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+main > ul > li:hover a {
+    font-size: 1.7rem;
+    transition: 1.5s;
+}
+
+main > ul > li:hover > h2{
+    width: 297px;
+}
+
+main ul li a img{
+    width: 100%;
+    height: auto;
+    transition: transform 1.5s;
+    transform-origin: center center;
+}
+
+main ul li a {
+    display: block; /* Certifique-se de que o link ocupa todo o espaço disponível */
+    margin: 0; /* Remova a margem padrão */
+    padding: 0; /* Remova o padding padrão */
+    transition: transform 1.5s;
+    transform-origin: center center;
+}
+
+main ul li:hover a img{
+    transform: scale(1.1);
+}
+
+

@@ -1,0 +1,12 @@
+main {
+    margin: 30px 40px;
+}
+
+main > ol > li:first-child {
+    margin: 0;
+}
+
+main > ol > li {
+    margin-top: 15px;   
+}
+
