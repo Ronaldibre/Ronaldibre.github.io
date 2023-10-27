@@ -2,7 +2,11 @@
 
 * {
     font-family: "Roboto Condensed", sans-serif;
-  }
+}
+
+main{
+    font-size: large;
+}
 
 header{
     background-color: rgb(133,80,202);
@@ -71,4 +75,5 @@ footer > p {
     font-weight: lighter;
     font-style: italic;
     text-align: center;
+    color: white;
 }

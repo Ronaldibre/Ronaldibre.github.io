@@ -2,6 +2,10 @@ header{
     margin-bottom: 40px;
 }
 
+main ul li{
+    width: 297px;
+}
+
 
 main ul li h2{
     width: 270px;

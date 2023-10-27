@@ -10,3 +10,15 @@ main > ol > li {
     margin-top: 15px;   
 }
 
+main > ul{
+    display: block;
+}
+
+main > ul > li{
+    margin-top: 20px;
+}
+
+margin > ul > li:first-child{
+    margin: 0px;
+}
+

@@ -1,0 +1,8 @@
+main {
+    margin: 30px 40px;
+}
+
+main ul{
+    display: block;
+    list-style-type: disc;
+}
