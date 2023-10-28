@@ -305,12 +305,17 @@
             }
 
             const regex = new RegExp(termo, 'gi');
+
+
+			
+			
             const novoTexto = texto.innerHTML.replace(regex, (match) => `<span style="background-color: yellow">${match}</span>`);
 
             texto.innerHTML = novoTexto;
 
-            const numOcorrencias = (novoTexto.match(/<span style="background-color: yellow">/g) || []).length;
-            ocorrencias.textContent = numOcorrencias;
+            novoTexto.match(/<span style="background-color: yellow">/g) || []
+			const matches = texto.innerHTML.match(regex);
+			const numOcorrencias = matches ? matches.length : 0;
 
             if (numOcorrencias === 0) {
                 let resposta = "A busca não retornou nenhum resultado."
@@ -319,6 +324,9 @@
 				let resposta = `O termo <q>${termo}</q> aparece ${numOcorrencias} vezes.`
                 resposta.textContent = resposta;
             }
+
+			const pResposta = document.querySelector("#q4_resultado")
+			pResposta.textContent = `O termo ${termo} aparece ${numOcorrencias} vezes`
 		
 
 }
