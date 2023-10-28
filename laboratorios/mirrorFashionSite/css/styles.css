@@ -1,0 +1,23 @@
+h1.titulo-topo{
+    background-color: #aaa;
+}
+
+h2.compre {
+    background-color: #bbb;
+    color: blue;
+    text-align: center;
+    font-size: 3rem;
+    padding: 20px;
+}
+
+figure {
+    background-color: #ccc;
+}
+
+body{
+    margin: 0;
+}
+
+main > figure > img{
+    align-items: center;
+}
