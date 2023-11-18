@@ -112,7 +112,6 @@
 						<button id="q1_executa">Adicionar</button>
 					</p>
 					<p id="q1_resposta">
-						<em>&lt;&lt;Exemplo abaixo. Remova os itens de exemplo antes de inserir a sua resposta!!!&gt;&gt;</em>
 					</p>
 					<table>
 						<tr>
@@ -144,7 +143,7 @@
 						<button id="q2_executa">N-Ésimo Primo</button>
 					</p>
 					<p id="q2_resposta">
-						O 3º primo é 5. <em>&lt;&lt;Remova esta mensagem antes de inserir a sua!!!&gt;&gt;</em>
+
 					</p>
 				</fieldset>
 			</li>
@@ -163,9 +162,7 @@
 						<button id="q3_ord_desc">Ordenar Descendente</button>
 					</p>
 					<ul id="q3_lista">
-						<li>Pedro</li>
-						<li>Ana</li>
-						<li>João</li>
+
 					</ul>
 				</fieldset>
 			</li>
@@ -194,7 +191,7 @@
 					<legend>Questão 5</legend>
 					<article id="questao5_texto">
 						<p>
-							<span class="destaque">JavaScript</span> (frequentemente abreviado como JS) é uma linguagem de programação interpretada estruturada, de script em alto nível com tipagem dinâmica fraca e multiparadigma (protótipos, orientado a objeto, imperativo e, funcional). Juntamente com HTML e CSS, o JavaScript é uma das três principais tecnologias da World Wide Web. JavaScript permite páginas da Web interativas e, portanto, é uma parte essencial dos aplicativos da web. A grande maioria dos sites usa, e todos os principais navegadores têm um mecanismo JavaScript dedicado para executá-lo.
+							JavaScript (frequentemente abreviado como JS) é uma linguagem de programação interpretada estruturada, de script em alto nível com tipagem dinâmica fraca e multiparadigma (protótipos, orientado a objeto, imperativo e, funcional). Juntamente com HTML e CSS, o JavaScript é uma das três principais tecnologias da World Wide Web. JavaScript permite páginas da Web interativas e, portanto, é uma parte essencial dos aplicativos da web. A grande maioria dos sites usa, e todos os principais navegadores têm um mecanismo JavaScript dedicado para executá-lo.
 						</p>
 						<p>
 							É atualmente a principal linguagem para programação client-side em navegadores web. É também bastante utilizada do lado do servidor através de ambientes como o node.js.
@@ -220,7 +217,7 @@
 					<button id="q5_executa">Pesquisar</button>
 
 					<p id="q5_resposta">
-						O termo <q>JavaScript</q> aparece 4 vezes. <em>Apague o exemplo antes de começar</em>
+
 					</p>
 				</fieldset>
 			</li>
@@ -239,63 +236,183 @@
 		let bt_questao4_cinza = document.getElementById("q4_cinza");
 		let bt_questao5 = document.getElementById("q5_executa");
 
-		const calcMedia = lista =>{
-			media = lista.reduce((acum,altura) => acum+altura, 0)/lista.length
-			return !media ? 0 :media;
-		}
+		let listaHomens = []
+		let listaMulheres = []
 
 		let resposta1 = () => {
 			const sexo = document.querySelector("#q1_sexo").value
+			console.log(sexo)
 			const altura = document.querySelector("#q1_altura").value
 
-			atualizarListas(sexo,altura)
+			console.log(listaHomens)
 
-			let mediaAltHomem = calcMedia(alturaHomemList)
-			let medAltMulher = calcMedia(alturaMulherList)
-			// resposta da questão 1 aqui.
+			if(sexo == "M"){
+				listaHomens.push(altura)
+			}else{
+				listaMulheres.push(altura)
+			}
+
+			let mediaHomens =0.0
+			listaHomens.forEach(homem => {
+				mediaHomens += parseFloat(homem)
+			})
+			console.log(mediaHomens)
+			console.log(listaHomens.length)
+			mediaHomens /= listaHomens.length
+
+			let mediaMulheres =0.0
+			listaMulheres.forEach(mulher => {
+				mediaMulheres += parseFloat(mulher)
+			})
+			mediaMulheres /= listaMulheres.length
+
+			const pResposta = document.querySelector("#q1_resposta")
+			pResposta.textContent = `A média de altura dos ${listaHomens.length} homens é ${mediaHomens} e a média de altura das ${listaMulheres.length} mulheres é ${mediaMulheres}`
 		}
 
 		let resposta2 = () => {
-			// resposta da questão 2 aqui.
+			const numero = document.querySelector("#q2_inteiro").value
+
+			let n_primos = 0
+			let n_esimo = 0
+			let j = 2
+
+
+			do
+			{
+				let qtdDivisores = 0
+				for(let i=2; i <= j ** 1/2; i++){
+					console.log("i: " + i)
+					if(j%i == 0){
+						qtdDivisores++
+					}
+				}
+
+				if(qtdDivisores == 0){
+					n_primos++
+					n_esimo = j
+				}
+				console.log("quantidade de primos: " + n_primos)
+
+				j++
+
+			}while(n_primos != numero)
+
+			j--
+
+			let resposta = document.querySelector("#q2_resposta")
+			resposta.textContent = `O ${numero}° número primo é ${j}`
+
+		}
+
+		let i = 0;
+
+		let nomes = []	
+
+		let lista = document.getElementById('q3_lista');
+
+		function adicionarLi(nome) {
+			var novoItem = document.createElement('li');
+			novoItem.textContent = nome;
+			lista.appendChild(novoItem);
 		}
 
 		let resposta3_add = () => {
+			nomes.push(document.querySelector("#q3_nome").value)
 			// resposta da questão 3 - adição de novos elementos aqui.
+			    // Selecionar o elemento com ID "q3_lista"
+			
+
+			adicionarLi(nomes[i])
+			i++
+
 			
 		}
 
 		let resposta3_ordena_asc = () => {
-			// resposta da questão 3 - ordenação ascendente aqui.
-			
+			nomes.sort()
+			let j = 1;
+			nomes.forEach(nome =>{
+				document.querySelector("#q3_lista li:nth-child(" + j + ")" ).textContent = nomes[j-1]
+				j++
+			})
 		}
 
 		let resposta3_ordena_desc = () => {
-			// resposta da questão 3 - ordenação descendente aqui.
-			
+			nomes.sort()
+			for (let i = 0; i < nomes.length / 2; i++) {
+				let aux = nomes[i]
+				nomes[i] = nomes[nomes.length - 1 - i]
+				nomes[nomes.length - 1 - i] = aux
+			}
+			let j = 1;
+			nomes.forEach(nome =>{
+				document.querySelector("#q3_lista li:nth-child(" + j + ")" ).textContent = nomes[j-1]
+				j++
+			})
 		}
 
 		
 
 		let resposta4_azul = () => {
-			// resposta da questão 4 aqui - transforme o fundo em azul
+			document.body.style.backgroundColor = "blue";
 		}
 
 		let resposta4_branco = () => {
-			// resposta da questão 4 aqui - transforme o fundo em branco
+			document.body.style.backgroundColor = "white";
 		}
 
 		let resposta4_verde = () => {
-			// resposta da questão 4 aqui - transforme o fundo em verde
+			document.body.style.backgroundColor = "green";
 		}
 
 		let resposta4_cinza = () => {
-			// resposta da questão 4 aqui - transforme o fundo em cinza
+			document.body.style.backgroundColor = "gray";
 		}
 
-		let resposta5 = () => {
-			// resposta da questão 5 aqui.
+
+		function contarOcorrencias(texto, termo) {
+			var contagem = 0;
+			var posicao = texto.indexOf(termo);
+
+			while (posicao !== -1) {
+				contagem++;
+				posicao = texto.indexOf(termo, posicao + 1);
+			}
+
+			return contagem;
 		}
-		
+
+
+		/*function destacarTermo(texto, termo) {
+			var posicao = texto.indexOf(termo);
+
+			while (posicao !== -1) {
+				texto = texto.replace(termo, '<span class="destaque">' + termo + "</span>")
+				posicao = texto.indexOf(termo, posicao + 1);
+			}
+			return texto
+		}*/
+
+
+
+
+
+
+		let resposta5 = () => {
+			let texto = document.querySelector("#questao5_texto").textContent.trim();
+			console.log(texto)
+
+			const termo = document.querySelector("#q5_termo").value
+
+			var ocorrencias = contarOcorrencias(texto.toLowerCase(), termo.toLowerCase());
+			/*texto = destacarTermo(texto,termo)
+			console.log(texto)*/
+
+			const pResposta = document.querySelector("#q5_resposta")
+			pResposta.textContent = `O termo ${termo} aparece ${ocorrencias} vezes`
+
+		}
 
 		//Atribuindo o evento click dos botões às funções acima
 		bt_questao1.addEventListener("click", resposta1, false);
@@ -308,8 +425,6 @@
 		bt_questao4_verde.addEventListener("click", resposta4_verde, false);
 		bt_questao4_cinza.addEventListener("click", resposta4_cinza, false);
 		bt_questao5.addEventListener("click", resposta5, false);
-
-
 	</script>
 </body>
 </html>
