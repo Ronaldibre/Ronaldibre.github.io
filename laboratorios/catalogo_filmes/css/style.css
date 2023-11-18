@@ -1,0 +1,44 @@
+*{
+    font-family: sans-serif;
+}
+
+body{
+    background-color: lightblue;
+}
+
+h1{
+    text-align: center;
+}
+
+ul{
+    list-style-type: none;
+}
+
+body > ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+body > ul > li{
+    background-color: white;
+    padding-bottom: 10px;
+    padding-right: 16px;
+    margin-bottom: 50px;
+}
+
+body > ul > li >nav{
+    display: flex;
+}
+
+body > ul > li{
+    max-width: 600px;
+}
+
+figure{
+    margin: 16px 40px 16px 16px;
+}
+
+.resumo{
+    margin-left: 30px;
+}
