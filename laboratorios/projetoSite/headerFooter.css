@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap");
 
 * {
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: "Roboto Condensed", "Arial", "Tahoma", "Verdana", "Helvetica", "Avenir", "Futura", "sans-serif";
 }
 
 main{
@@ -64,6 +64,11 @@ header > ul > li > a{
     text-transform: uppercase;
 }
 
+main > ul{
+    padding-left: 35px;
+    padding-right: 35px;
+}
+
 footer{
     background-color: rgb(133,80,202);
     padding: 10px;
@@ -76,4 +81,42 @@ footer > p {
     font-style: italic;
     text-align: center;
     color: white;
+}
+
+body > header > nav > button{
+    padding: 5px;
+    background-color: white;
+    color: rgb(133,80,202);
+    margin-right: 5px;
+    margin-left: 20px;
+    margin-bottom: 8px;
+}
+
+
+@media (max-width: 320px) /*and (max-height: 480px)*/ {
+    main > ul{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    header > ul{
+        display: flex;
+        flex-direction: column ;
+    }
+
+    header > ul > li{
+        margin-bottom: 20px;
+        border-radius: 0%;
+    }
+
+    body > header > nav > button{
+        margin: 0;
+        margin-bottom: 10px;
+    }
+
+    body > header > nav{
+        display: flex;
+        justify-content: space-around;
+    }
+   
 }
