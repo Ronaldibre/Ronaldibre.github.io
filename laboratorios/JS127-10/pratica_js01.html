@@ -107,9 +107,7 @@
 						<button id="q1_executa">Adicionar</button>
 					</p>
 					<p id="q1_resposta">
-						<em>&lt;&lt;Exemplo. Remova os itens de exemplo antes de inserir a sua resposta!!!&gt;&gt; </em>
-                        <br>
-                        <strong>A frase possui 5 vogais!</strong>
+
 					</p>
 				</fieldset>
 
@@ -126,7 +124,7 @@
 						<button id="q2_executa">Inverte Frase</button>
 					</p>
 					<p id="q2_resposta">
-						<strong>!olpmexe ed esarF</strong>
+
 					</p>
 				</fieldset>
 			</li>
@@ -143,7 +141,7 @@
 						<button id="q3_executa">Pesquisar</button>
 					</p>
 					<p id="q3_resultado">
-						<strong>A palavra "TESTE" aparece 5 vezes.</strong>
+
 					</p>
 					
 				</fieldset>
@@ -187,7 +185,6 @@
 					<button id="q4_executa">Pesquisar</button>
 
 					<p id="q4_resposta">
-						O termo <q>JavaScript</q> aparece 4 vezes. <em>Apague o exemplo antes de começar</em>
 					</p>
 				</fieldset>
 			</li>
@@ -280,7 +277,7 @@
 			let palavraList = frase.split(" ")
 			let ocorrenciasPalavra = 0
 			palavraList.forEach(elemento => {
-				if(elemento.toLowerCase() == palavra){
+				if(elemento.toLowerCase() == palavra.toLowerCase()){
 					ocorrenciasPalavra++
 				}
 			});
@@ -291,7 +288,7 @@
 		}
 
 		let resposta4 = () => {
-// resposta da questão 4
+
 			const texto = document.getElementById("questao4_texto");
             const termo = document.getElementById("q4_termo").value;
             const resposta = document.getElementById("q4_resposta");
@@ -325,37 +322,39 @@
                 resposta.textContent = resposta;
             }
 
-			const pResposta = document.querySelector("#q4_resultado")
+			const pResposta = document.querySelector("#q4_resposta")
 			pResposta.textContent = `O termo ${termo} aparece ${numOcorrencias} vezes`
 		
 
 }
 
+
 		let resposta5 = () => {
-			// resposta da questão 5 aqui.
-			bt_questao5.onclick = function() {
+			let inputProcurar = document.getElementById("q5_procurar");
+			let inputSubstituir = document.getElementById("q5_substituir");
+			let botaoSubstituir = document.getElementById("q5_executa");
 
-				const texto = document.querySelector("#questao5_texto");
-				const palavraTrocar = document.querySelector("#q5_substituir").value;
-				const palavraBuscar = document.querySelector("#q5_procurar").value;
+			botaoSubstituir.addEventListener("click", () => {
+				// Obter o conteúdo do artigo
+				let artigo = document.getElementById("questao5_texto");
 
 
+				let termoProcurar = inputProcurar.value;
+				let termoSubstituir = inputSubstituir.value;
+
+				let regex = new RegExp(termoProcurar, "gi");
 
 
-				const palavraList = texto.textContent.split(/\s+/);
-	
-				const textoModificado = palavraList.map(function (palavra) {
-					if (palavra.toLowerCase() === palavraBuscar.toLowerCase()) {
-					return palavraTrocar;
-				} else {
-					return palavra;
-				}
+				let novoConteudo = artigo.innerHTML.replace(regex, termoSubstituir);
 
-				});
-	
-				texto.textContent = textoModificado.join(" ");
-			}
-		}
+
+				artigo.innerHTML = novoConteudo;
+			});
+};
+
+// Chamar a função para configurar o comportamento de substituição
+
+
 		
 
 		//Atribuindo o evento click dos botões às funções acima
