@@ -4,12 +4,14 @@ let bt_desativarEscuro = document.getElementById("desativarEscuro");
 let ativarTemaEscuro = () => {
     document.body.style.backgroundColor = "darkgray";
     document.body.querySelector('header').style.backgroundColor = 'black';
+    document.body.querySelector('footer').style.backgroundColor = 'black';
     localStorage.setItem('temaEscuro', 'ativado');
 }
 
 let desativarTemaEscuro = () => {
-    document.body.style.backgroundColor = ""; // Cor padrão do corpo
-    document.body.querySelector('header').style.backgroundColor = ''; // Cor padrão do cabeçalho
+    document.body.style.backgroundColor = ""; 
+    document.body.querySelector('header').style.backgroundColor = ''; 
+    document.body.querySelector('footer').style.backgroundColor = '';
     localStorage.setItem('temaEscuro', 'desativado');
 }
 
