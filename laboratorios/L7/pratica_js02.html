@@ -113,23 +113,7 @@
 					</p>
 					<p id="q1_resposta">
 					</p>
-					<table>
-						<tr>
-							<th></th>
-							<th>Homens</th>
-							<th>Mulheres</th>
-						</tr>
-						<tr>
-							<th>Participantes</th>
-							<td>4</td>
-							<td>3</td>
-						</tr>
-						<tr>
-							<th>Altura Média (m)</th>
-							<td>1,80</td>
-							<td>1,63</td>
-						</tr>
-					</table>
+
 				</fieldset>
 
 			</li>
@@ -270,6 +254,8 @@
 			pResposta.textContent = `A média de altura dos ${listaHomens.length} homens é ${mediaHomens} e a média de altura das ${listaMulheres.length} mulheres é ${mediaMulheres}`
 		}
 
+
+
 		let resposta2 = () => {
 			const numero = document.querySelector("#q2_inteiro").value
 
@@ -384,35 +370,40 @@
 		}
 
 
-		/*function destacarTermo(texto, termo) {
-			var posicao = texto.indexOf(termo);
-
-			while (posicao !== -1) {
-				texto = texto.replace(termo, '<span class="destaque">' + termo + "</span>")
-				posicao = texto.indexOf(termo, posicao + 1);
-			}
-			return texto
-		}*/
-
-
-
-
-
 
 		let resposta5 = () => {
-			let texto = document.querySelector("#questao5_texto").textContent.trim();
-			console.log(texto)
 
-			const termo = document.querySelector("#q5_termo").value
+			let inputTermo = document.getElementById("q5_termo");
+			let botaoPesquisar = document.getElementById("q5_executa");
+			let respostaElement = document.getElementById("q5_resposta");
 
-			var ocorrencias = contarOcorrencias(texto.toLowerCase(), termo.toLowerCase());
-			/*texto = destacarTermo(texto,termo)
-			console.log(texto)*/
+			
+			botaoPesquisar.addEventListener("click", () => {
 
-			const pResposta = document.querySelector("#q5_resposta")
-			pResposta.textContent = `O termo ${termo} aparece ${ocorrencias} vezes`
+			let artigo = document.getElementById("questao5_texto");
 
-		}
+
+			let termoPesquisa = inputTermo.value;
+
+
+			let regex = new RegExp(`(${termoPesquisa})`, "gi");
+
+
+			let novoConteudo = artigo.innerHTML.replace(regex, '<span class="destaque">$1</span>');
+
+
+			artigo.innerHTML = novoConteudo;
+
+
+			let numOcorrencias = (artigo.innerHTML.match(/<span class="destaque">/g) || []).length;
+
+
+			respostaElement.innerHTML = `O termo "${termoPesquisa}" aparece ${numOcorrencias} vezes no texto.`;
+    });
+};
+
+		resposta5();
+
 
 		//Atribuindo o evento click dos botões às funções acima
 		bt_questao1.addEventListener("click", resposta1, false);
